@@ -1,20 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { getMenu } from "../../services/apiRestaurant";
+import MenuItem from "./MenuItem";
 
 export default function Menu() {
   const menu = useLoaderData();
   console.log(menu);
   return (
-    <div>
-      {menu?.data?.map((menuItem) => {
-        return (
-          <div>
-            {" "}
-            <p>{menuItem.name}</p>
-          </div>
-        );
-      })}
-    </div>
+    <ul className="max-w-[1536px] w-full flex flex-col gap-4">
+      {menu &&
+        menu.map((menuItem) => {
+          return <MenuItem data={menuItem} key={menuItem.id} />;
+        })}
+    </ul>
   );
 }
 
