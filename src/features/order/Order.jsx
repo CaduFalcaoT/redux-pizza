@@ -27,7 +27,7 @@ export default function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="fixed flex flex-col gap-12 px-4 py-6 w-full max-w-[1024px] h-[calc(100vh-120px)] bg-[#ffffff4f] rounded shadow-2xl">
+    <div className="fixed flex flex-col gap-12 p-12 w-full max-w-[1024px] h-[calc(100vh-120px)] bg-[#ffffff4f] rounded shadow-2xl">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-3xl font-semibold">Pedido #{id} Status</h2>
 

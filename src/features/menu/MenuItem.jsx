@@ -5,7 +5,7 @@ export default function MenuItem({ data }) {
   const { name, unitPrice, imageUrl, ingredients, soldOut } = data;
 
   return (
-    <li className="flex gap-4 p-4 bg-[#ffffff4f] rounded">
+    <li className="flex gap-4 p-4 bg-[#ffffff4f] rounded shadow-xl">
       <img
         src={imageUrl}
         alt={name}
