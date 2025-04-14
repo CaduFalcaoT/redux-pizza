@@ -24,27 +24,29 @@ export default function Order() {
     cart,
   } = order;
 
+  console.log(order);
+
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="fixed flex flex-col gap-12 p-12 w-full max-w-[1024px] h-[calc(100vh-120px)] bg-[#ffffff4f] rounded shadow-2xl">
+    <div className="fixed flex h-[calc(100vh-120px)] w-full max-w-[1024px] flex-col gap-12 rounded bg-[#ffffff4f] p-12 shadow-2xl">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-3xl font-semibold">Pedido #{id} Status</h2>
 
         <div className="space-x-2">
           {priority && (
-            <span className="rounded-full bg-red-500 px-4 py-2 text-base font-semibold uppercase tracking-wide text-red-50">
+            <span className="rounded-full bg-red-500 px-4 py-2 text-base font-semibold tracking-wide text-red-50 uppercase">
               Prioridade
             </span>
           )}
-          <span className="rounded-full bg-green-500 px-4 py-2 text-base font-semibold uppercase tracking-wide text-green-50">
+          <span className="rounded-full bg-green-500 px-4 py-2 text-base font-semibold tracking-wide text-green-50 uppercase">
             Pedido {status}
           </span>
         </div>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-2 rounded bg-[#7C2700] px-6 py-5">
-        <p className="font-medium text-white text-lg">
+        <p className="text-lg font-medium text-white">
           {deliveryIn >= 0
             ? `Apenas ${calcMinutesLeft(estimatedDelivery)} minutos faltando 😃`
             : "Pedido deve ter chegado"}
@@ -54,13 +56,13 @@ export default function Order() {
         </p>
       </div>
 
-      <ul className="dive-stone-200 divide-y border-b border-t">
+      <ul className="dive-stone-200 divide-y border-t border-b">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.id} />
+          <OrderItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
-      <div className="space-y-2 bg-[#7C2700] px-6 py-5 rounded">
+      <div className="space-y-2 rounded bg-[#7C2700] px-6 py-5">
         <p className="text-base text-stone-300">
           Preço pedido: {formatCurrency(orderPrice)}
         </p>
@@ -69,7 +71,7 @@ export default function Order() {
             Preço de prioridade: {formatCurrency(priorityPrice)}
           </p>
         )}
-        <p className="font-medium text-white text-lg">
+        <p className="text-lg font-medium text-white">
           Para pagar na entrega: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>

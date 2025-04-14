@@ -1,10 +1,20 @@
-import { Link, Outlet, useNavigation } from "react-router-dom";
+import { Link, Outlet, useNavigate, useNavigation } from "react-router-dom";
 import Loader from "./Loader";
 import SearchOrder from "../features/order/SearchOrder";
+import CartOverview from "../features/cart/CartOverview";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function AppLayout() {
   const navigation = useNavigation();
+  const navigate = useNavigate();
   const isLoading = navigation.state === "loading";
+
+  const username = useSelector((state) => state.user.name);
+
+  useEffect(() => {
+    if (username === "") navigate("/");
+  }, [username, navigate]);
 
   return (
     <>
@@ -14,10 +24,12 @@ export default function AppLayout() {
           FAST REACT PIZZA CO.
         </Link>
         <SearchOrder />
+        {username && <p className="text-2xl font-medium">Hello, {username}!</p>}
       </header>
       <main className="flex w-full justify-center p-8">
         <Outlet />
       </main>
+      <CartOverview />
     </>
   );
 }

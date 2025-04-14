@@ -4,9 +4,9 @@ import MenuItem from "./MenuItem";
 
 export default function Menu() {
   const menu = useLoaderData();
-  console.log(menu);
+
   return (
-    <ul className="max-w-[1024px] w-full flex flex-col gap-4">
+    <ul className="flex w-full max-w-[1024px] flex-col gap-4">
       {menu &&
         menu.map((menuItem) => {
           return <MenuItem data={menuItem} key={menuItem.id} />;
