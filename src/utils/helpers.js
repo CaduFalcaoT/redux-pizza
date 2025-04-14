@@ -6,7 +6,7 @@ export function formatCurrency(value) {
 }
 
 export function formatDate(dateStr) {
-  return new Intl.DateTimeFormat("pt-br", {
+  return new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "short",
     hour: "2-digit",
