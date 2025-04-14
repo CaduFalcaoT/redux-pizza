@@ -6,8 +6,16 @@ const initialState = {
   location: "",
 };
 
-const userData = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    updateName(state, action) {
+      state.name = action.payload;
+    },
+  },
 });
+
+export const { updateName } = userSlice.actions;
+
+export default userSlice.reducer;
