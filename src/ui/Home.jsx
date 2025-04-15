@@ -17,7 +17,7 @@ export default function Home() {
           Welcome{" "}
           {username
             ? `, ${username}! Click below to continue your order.`
-            : "! Por favor, informe seu nome:"}
+            : "! Please provide your fullname:"}
         </p>
         {username ? (
           <span>
