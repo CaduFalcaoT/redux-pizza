@@ -1,4 +1,4 @@
-[![Project Demo](https://i.imgur.com/lEDffbI.gif)]
+[![Project Demo](https://i.imgur.com/lEDffbI.gif)](https://github.com/CaduFalcaoT/redux-pizza.git)
 
 # Redux Pizza Delivery (en)
 
