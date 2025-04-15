@@ -1,3 +1,5 @@
+[![Project Demo](https://i.imgur.com/lEDffbI.gif)]
+
 # Redux Pizza Delivery (en)
 
 Welcome to **Redux Pizza Delivery**, a project developed to explore and implement state management using the modern approach of **Redux Toolkit**. This project consists of a pizza delivery application where users can browse the menu, customize orders, and efficiently manage their shopping cart.

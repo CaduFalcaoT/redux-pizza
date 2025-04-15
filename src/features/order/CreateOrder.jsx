@@ -2,7 +2,6 @@ import {
   Form,
   redirect,
   useActionData,
-  useNavigate,
   useNavigation,
 } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
@@ -10,7 +9,7 @@ import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../store";
 import { clearCart, getTotalCartPrice } from "../cart/cartSlice";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { formatCurrency } from "../../utils/helpers";
 import { fetchAddress } from "../user/userSlice";
 
