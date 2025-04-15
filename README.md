@@ -1,4 +1,4 @@
-# Redux Pizza Delivery
+# Redux Pizza Delivery (en)
 
 Welcome to **Redux Pizza Delivery**, a project developed to explore and implement state management using the modern approach of **Redux Toolkit**. This project consists of a pizza delivery application where users can browse the menu, customize orders, and efficiently manage their shopping cart.
 
@@ -46,7 +46,9 @@ This project demonstrates important skills for modern application development, s
    ```
 4. Access the application in your browser at `http://localhost:5173`.
 
-# Redux Pizza Delivery
+
+
+# Redux Pizza Delivery (br)
 
 Bem-vindo ao **Redux Pizza Delivery**, um projeto desenvolvido com o objetivo de explorar e implementar o gerenciamento de estado utilizando a abordagem moderna do **Redux Toolkit**. Este projeto consiste em uma aplicação de delivery de pizzas, onde os usuários podem navegar pelo menu, personalizar pedidos e gerenciar o carrinho de compras de forma eficiente.
 
