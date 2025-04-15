@@ -1,10 +1,16 @@
-import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
+import {
+  Form,
+  redirect,
+  useActionData,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
 import store from "../../store";
 import { clearCart, getTotalCartPrice } from "../cart/cartSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils/helpers";
 import { fetchAddress } from "../user/userSlice";
 
@@ -16,6 +22,7 @@ const isValidPhone = (str) =>
 
 function CreateOrder() {
   const navigation = useNavigation();
+  const navigate = useNavigate();
   const isSubmitting = navigation.state === "submitting";
   const dispatch = useDispatch();
 
@@ -24,7 +31,7 @@ function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const cart = useSelector((state) => state.cart);
   const {
-    username,
+    name,
     status: addressStatus,
     position,
     address,
@@ -35,6 +42,12 @@ function CreateOrder() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
+
+  useEffect(() => {
+    if (!cart.length) {
+      navigate("/cart");
+    }
+  }, [cart, navigate]);
 
   return (
     <div className="fixed h-[calc(100vh-120px)] w-full max-w-[1024px] rounded bg-[#ffffff4f] p-12">
@@ -48,7 +61,7 @@ function CreateOrder() {
             type="text"
             name="customer"
             required
-            defaultValue={username}
+            defaultValue={name}
           />
         </div>
 
@@ -124,8 +137,8 @@ function CreateOrder() {
               `${position.latitude},${position.longitude}`
             }
           />
-          <Button disabled={isSubmitting} type="primary">
-            {isSubmitting || isLoadingAdress
+          <Button disabled={isSubmitting || isLoadingAdress} type="primary">
+            {isSubmitting
               ? "Placing order...."
               : `Order now from ${formatCurrency(totalPrice)}`}
           </Button>

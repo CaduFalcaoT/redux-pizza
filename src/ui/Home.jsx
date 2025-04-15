@@ -3,6 +3,7 @@ import ellipse from "../assets/Ellipse.png";
 import CreateUser from "../features/user/CreateUser";
 import { useSelector } from "react-redux";
 import Button from "./Button";
+import { formatName } from "../utils/helpers";
 
 export default function Home() {
   const username = useSelector((state) => state.user.name);
@@ -16,7 +17,7 @@ export default function Home() {
         <p className="ml-1 text-xl text-gray-900 2xl:text-xl">
           Welcome{" "}
           {username
-            ? `, ${username}! Click below to continue your order.`
+            ? `, ${formatName(username)}! Click below to continue your order.`
             : "! Please provide your fullname:"}
         </p>
         {username ? (

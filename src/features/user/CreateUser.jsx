@@ -21,7 +21,7 @@ export default function CreateUser() {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Seu nome completo..."
+        placeholder="Your fullname..."
         className="flex h-14 w-[562px] items-center rounded-4xl border border-[#AE3700] px-4 text-base text-black outline-0 transition-all duration-300 focus:ring-2 focus:ring-[#AE3700]"
         style={{
           background:

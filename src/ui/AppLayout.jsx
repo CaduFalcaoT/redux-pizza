@@ -4,6 +4,7 @@ import SearchOrder from "../features/order/SearchOrder";
 import CartOverview from "../features/cart/CartOverview";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { formatName } from "../utils/helpers";
 
 export default function AppLayout() {
   const navigation = useNavigation();
@@ -24,7 +25,9 @@ export default function AppLayout() {
           FAST REACT PIZZA CO.
         </Link>
         <SearchOrder />
-        {username && <p className="text-2xl font-medium">Hello, {username}!</p>}
+        {username && (
+          <p className="text-2xl font-medium">Hello, {formatName(username)}!</p>
+        )}
       </header>
       <main className="flex w-full justify-center p-8">
         <Outlet />
