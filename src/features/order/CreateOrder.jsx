@@ -22,7 +22,6 @@ const isValidPhone = (str) =>
 
 function CreateOrder() {
   const navigation = useNavigation();
-  const navigate = useNavigate();
   const isSubmitting = navigation.state === "submitting";
   const dispatch = useDispatch();
 
@@ -42,12 +41,6 @@ function CreateOrder() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
-
-  useEffect(() => {
-    if (!cart.length) {
-      navigate("/cart");
-    }
-  }, [cart, navigate]);
 
   return (
     <div className="fixed h-[calc(100vh-120px)] w-full max-w-[1024px] rounded bg-[#ffffff4f] p-12">
