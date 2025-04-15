@@ -22,7 +22,7 @@ export default function AppLayout() {
       {isLoading && <Loader />}
       <header className="flex items-center gap-8 p-8">
         <Link className="text-[32px] text-gray-900 2xl:text-4xl" to="/">
-          FAST REACT PIZZA CO.
+          REDUX PIZZA DELIVERY
         </Link>
         <SearchOrder />
         {username && (
