@@ -1,9 +1,5 @@
 ![Project Demo](/public/home.gif)
 
-![Menu Demo](/public/menu.png)
-
-![Order Demo](/public/order.png)
-
 # Redux Pizza Delivery (en)
 
 Welcome to **Redux Pizza Delivery**, a project developed to explore and implement state management using the modern approach of **Redux Toolkit**. This project consists of a pizza delivery application where users can browse the menu, customize orders, and efficiently manage their shopping cart.
@@ -97,3 +93,8 @@ Este projeto demonstra habilidades importantes para o desenvolvimento de aplica�
    npm run dev
    ```
 4. Acesse a aplicação no navegador em `http://localhost:5173`.
+
+
+![Menu Demo](/public/menu.png)
+
+![Order Demo](/public/order.png)
