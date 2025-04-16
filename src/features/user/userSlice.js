@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getAddress } from "../../../../../ultimate-react-course-main/ultimate-react-course-main/16-fast-react-pizza/final-2-final/src/services/apiGeocoding";
+import { getAddress } from "../../services/apiGeocoding";
 
 function getPosition() {
   return new Promise(function (resolve, reject) {

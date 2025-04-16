@@ -1,4 +1,8 @@
-![Project Demo](https://i.imgur.com/lEDffbI.gif)
+![Project Demo](/public/home.gif)
+
+![Menu Demo](/public/menu.png)
+
+![Order Demo](/public/order.png)
 
 # Redux Pizza Delivery (en)
 
@@ -47,8 +51,6 @@ This project demonstrates important skills for modern application development, s
    npm run dev
    ```
 4. Access the application in your browser at `http://localhost:5173`.
-
-
 
 # Redux Pizza Delivery (br)
 
