@@ -94,7 +94,7 @@ Este projeto demonstra habilidades importantes para o desenvolvimento de aplica�
    ```
 4. Acesse a aplicação no navegador em `http://localhost:5173`.
 
-## Demo Images 
+# Demo Images 
 
 ![Menu Demo](/public/menu.png)
 
